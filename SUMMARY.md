@@ -1,6 +1,7 @@
 # Summary
 
-
+* [Internet 之父-- Vint Cerf](vint.md)
+* [Email 之父-- Ray Tomlinson](ray.md)
 * [Web App 之父-- Paul Graham](pg.md)
 * [自由软件之父-- Richard Stallman](rms.md)
 * [Linux 之父-- Linus Torvalds](linus.md)
