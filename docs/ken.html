@@ -1,0 +1,394 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Unix 之父-- Ken Thompson · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vint.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="ken.html">
+            
+                <a href="ken.html">
+            
+                    
+                    Unix 之父-- Ken Thompson
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="vint.html">
+            
+                <a href="vint.html">
+            
+                    
+                    Internet 之父-- Vint Cerf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ray.html">
+            
+                <a href="ray.html">
+            
+                    
+                    Email 之父-- Ray Tomlinson
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="pg.html">
+            
+                <a href="pg.html">
+            
+                    
+                    Web App 之父-- Paul Graham
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="rms.html">
+            
+                <a href="rms.html">
+            
+                    
+                    自由软件之父-- Richard Stallman
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="linus.html">
+            
+                <a href="linus.html">
+            
+                    
+                    Linux 之父-- Linus Torvalds
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="gil.html">
+            
+                <a href="gil.html">
+            
+                    
+                    密码朋克之父-- John Gilmore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="lee.html">
+            
+                <a href="lee.html">
+            
+                    
+                     Web 之父--Tim Berners-Lee
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="marc.html">
+            
+                <a href="marc.html">
+            
+                    
+                    互联网民用化之父--马克安德森
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="barlow.html">
+            
+                <a href="barlow.html">
+            
+                    
+                    网络空间独立宣言之父--John Barlow 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Unix 之父-- Ken Thompson</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>1943&#x5E74;&#x51FA;&#x751F;&#x7684; Ken Thompson &#x662F; Unix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E4B;&#x7236;&#xFF0C;&#x7531;&#x4E8E; Unix &#x548C;&#x4E92;&#x8054;&#x7F51;&#x7684;&#x7D27;&#x5BC6;&#x8054;&#x7CFB;&#xFF0C;&#x6240;&#x4EE5; Peter &#x8BA4;&#x4E3A; Ken &#x4E5F;&#x662F;&#x4E92;&#x8054;&#x7F51;&#x7684;&#x5960;&#x57FA;&#x4EBA;&#x4E4B;&#x4E00;&#x3002;</p>
+<p><img src="https://img.haoqicat.com/2019072801.jpg" alt=""></p>
+<h2 id="unix-&#x8BDE;&#x751F;">Unix &#x8BDE;&#x751F;</h2>
+<p>&#x5148;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B; Ken &#x7684;&#x751F;&#x6D3B;&#x8F68;&#x8FF9;&#x4EE5;&#x53CA; Unix &#x662F;&#x5982;&#x4F55;&#x8BDE;&#x751F;&#x7684;&#x3002;</p>
+<p>1965 Ken &#x5728; UC Berkeley &#x83B7;&#x5F97;&#x4E86;&#x8BA1;&#x7B97;&#x673A;&#x7855;&#x58EB;&#x5B66;&#x4F4D;&#x3002;1966&#x5E74;&#x5F00;&#x59CB;&#x4E3A;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x5DE5;&#x4F5C;&#xFF0C;&#x5E76;&#x548C;&#x597D;&#x53CB; Dennis Ritchie &#x4E00;&#x8D77;&#x5F00;&#x59CB;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x5E9E;&#x5927;&#x800C;&#x590D;&#x6742;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x540D;&#x53EB; Multics &#x3002;Multics &#x6700;&#x7EC8;&#x56E0;&#x4E3A;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x800C;&#x5931;&#x8D25;&#xFF0C;&#x800C; Ken &#x4E3A;&#x4E86;&#x8FD0;&#x884C;&#x81EA;&#x5DF1;&#x7684;&#x6E38;&#x620F;&#x800C;&#x5728;&#x5EA6;&#x5047;&#x7684;&#x65F6;&#x5019;&#x5F00;&#x53D1;&#x7684; Unix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5374;&#x6700;&#x7EC8;&#x6210;&#x4E3A;&#x4E86;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E4B;&#x738B;&#x3002;</p>
+<p>&#x65E9;&#x671F;&#x7684; Unix &#x4E3B;&#x8981;&#x662F; Ken &#x4E00;&#x4E2A;&#x4EBA;&#x7684;&#x4F5C;&#x54C1;&#x3002;&#x6574;&#x4E2A;1970&#x5E74;&#x4EE3;&#xFF0C;Ken &#x548C; Dannis &#x90FD;&#x5728;&#x5FD9;&#x7740;&#x5F00;&#x53D1; Unix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x4E3A;&#x4E86;&#x5F00;&#x53D1; Unix &#xFF0C;Ken &#x81EA;&#x5DF1;&#x8FD8;&#x5F00;&#x53D1;&#x4E86; B &#x8BED;&#x8A00;&#x3002;B &#x8BED;&#x8A00;&#x542F;&#x53D1;&#x4E86; Dennis Ritchie &#x7684; C &#x8BED;&#x8A00;&#xFF0C;Unix &#x540E;&#x6765;&#x5168;&#x90E8;&#x7528; C &#x8BED;&#x8A00;&#x91CD;&#x5199;&#x4E86;&#x4E00;&#x904D;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4F55; Dennis &#x4E5F;&#x88AB;&#x79F0;&#x4E3A; Unix &#x4E4B;&#x7236;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<p>&#x603B;&#x4E4B;&#xFF0C;Unix &#x7684;&#x8BDE;&#x751F;&#x662F; Ken &#x7684;&#x5999;&#x624B;&#x5076;&#x5F97;&#xFF0C;Ken &#x4E5F;&#x56E0;&#x6B64;&#x548C; Dannis &#x4E00;&#x8D77;&#x83B7;&#x5F97;&#x4E86;1983&#x5E74;&#x56FE;&#x7075;&#x5956;&#x3002;</p>
+<h2 id="unix-&#x548C;&#x5F00;&#x6E90;">Unix &#x548C;&#x5F00;&#x6E90;</h2>
+<p>Ken &#x4E0D;&#x662F; Richard Stallman &#xFF0C;&#x4E5F;&#x4E0D;&#x662F; Linus &#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x8BF4;&#xFF0C;&#x6CA1;&#x6709; Unix &#x4E5F;&#x5C31;&#x6CA1;&#x6709;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x3002;</p>
+<p>Unix &#x672C;&#x8EAB;&#x662F;&#x4E13;&#x6709;&#x8F6F;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5B9E; Unix &#x7684;&#x6E90;&#x7801;&#x662F;&#x5F88;&#x5BB9;&#x6613;&#x62FF;&#x5230;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x662F;&#x5728;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x5458;&#x5DE5;&#x7684;&#x6210;&#x679C;&#xFF0C;&#x6240;&#x4EE5; Unix &#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x662F;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#x901A;&#x8FC7; Ken &#x548C;&#x5927;&#x5BB6;&#x7684;&#x52AA;&#x529B;&#xFF0C;&#x5404;&#x4E2A;&#x5B66;&#x6821;&#x53EA;&#x9700;&#x8981;&#x82B1;200&#x7F8E;&#x91D1;&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230; Unix &#x7684;&#x6E90;&#x7801;&#x3002;&#x540E;&#x6765; Linus &#x5199; Linux &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x53C2;&#x8003;&#x4E86;&#x5F88;&#x591A;&#x5DF2;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>Unix &#x54F2;&#x5B66;&#x662F;&#x6A21;&#x5757;&#x5316;&#x54F2;&#x5B66;&#x3002;Unix &#x7684;&#x601D;&#x60F3;&#x4E3B;&#x5F20;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x90FD;&#x53EA;&#x505A;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x5E76;&#x628A;&#x8FD9;&#x4EF6;&#x4E8B;&#x505A;&#x597D;&#xFF0C;&#x540C;&#x65F6;&#x5B9A;&#x4E49;&#x597D;&#x6E05;&#x6670;&#x7684;&#x548C;&#x5176;&#x4ED6;&#x8F6F;&#x4EF6;&#x901A;&#x4FE1;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0D;&#x540C;&#x7684;&#x8F6F;&#x4EF6;&#x53EF;&#x4EE5;&#x826F;&#x597D;&#x7684;&#x914D;&#x5408;&#x3002;&#x8FD9;&#x79CD;&#x601D;&#x60F3;&#x5BFC;&#x81F4;&#x591A;&#x4EBA;&#x534F;&#x4F5C;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x5927;&#x7CFB;&#x7EDF;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#xFF0C;&#x975E;&#x5E38;&#x9002;&#x5408;&#x5F00;&#x56E2;&#x961F;&#x7EC4;&#x7EC7;&#x677E;&#x6563;&#x5F00;&#x6E90;&#x56E2;&#x961F;&#x6765;&#x5F00;&#x53D1;&#x3002;</p>
+<p>Ken &#x548C; Dennis &#x8BF4;&#x8FC7;</p>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x6784;&#x5EFA;&#x7684;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x79C0;&#x7684;&#x8BA1;&#x7B97;&#x5E73;&#x53F0;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x56F4;&#x7ED5;&#x5B83;&#x6765;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x7F16;&#x7A0B;&#x793E;&#x533A;&#x7684;&#x5E73;&#x53F0;&#x3002;</p>
+</blockquote>
+<p>Linus &#x5728;&#x4F5C; The Origins of Linux &#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x300A; Linux &#x7684;&#x8D77;&#x6E90;&#x300B;&#xFF0C;&#x6F14;&#x8BB2;&#x7684;&#x65F6;&#x5019;&#xFF0C;Ken &#x4E5F;&#x5728;&#x73B0;&#x573A;&#x3002;Ken &#x548C; Linus &#x8BA8;&#x8BBA;&#x4E86;&#x793E;&#x533A;&#x5316;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x7684;&#x54F2;&#x5B66;&#x3002;Linus &#x5F53;&#x65F6;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x6BB5;&#x975E;&#x5E38;&#x957F;&#x7684;&#x56DE;&#x7B54;&#x3002;Linus &#x8BF4;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x547D;&#xFF0C;&#x4F1A;&#x4E0D;&#x65AD;&#x7684;&#x8FDB;&#x5316;&#x3002;&#x8BA8;&#x8BBA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x601D;&#x60F3;&#xFF0C;Peter &#x611F;&#x89C9;&#x4E0D;&#x5C40;&#x9650;&#x4E8E;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#xFF0C;&#x4E5F;&#x4F53;&#x73B0;&#x51FA;&#x4E92;&#x8054;&#x7F51;&#x7684;&#x6574;&#x4E2A;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x662F;&#x5982;&#x4F55;&#x6162;&#x6162;&#x81EA;&#x7531;&#x751F;&#x957F;&#x7684;&#xFF0C;&#x975E;&#x5E38;&#x503C;&#x5F97;&#x63A8;&#x8350;&#x3002;</p>
+<p>Linux &#x4E25;&#x683C;&#x6765;&#x8BF4;&#x4E0D;&#x7B97;&#x662F; Unix &#x7CFB;&#x7EDF;&#xFF0C;&#x56E0;&#x4E3A;&#x867D;&#x7136;&#x5916;&#x5728;&#x7279;&#x5F81;&#x8DDF; Unix &#x51E0;&#x4E4E;&#x4E00;&#x6A21;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x5176;&#x5B9E;&#x76F8;&#x5DEE;&#x751A;&#x8FDC;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x662F;&#x4E00;&#x4E2A; Unix-like &#x7CFB;&#x7EDF;&#x3002;&#x6709;&#x610F;&#x601D;&#x7684;&#x662F;&#xFF0C;Ken &#x81EA;&#x5DF1;&#x76EE;&#x524D;&#x4E5F;&#x4F7F;&#x7528; Linux &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x76EE;&#x524D;&#x5B89;&#x88C5;&#x91CF;&#x6700;&#x5927;&#x7684; Unix &#x7CFB;&#x7EDF;&#x662F;&#x82F9;&#x679C;&#x7684; macOS &#x3002;</p>
+<p>Unix &#x548C;&#x5F00;&#x6E90;&#x662F;&#x5BC6;&#x4E0D;&#x53EF;&#x5206;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x6CA1;&#x6709; Unix &#x5C31;&#x6CA1;&#x6709;&#x5F00;&#x6E90;&#x793E;&#x533A;&#x3002;</p>
+<h2 id="unix-&#x548C;&#x4E92;&#x8054;&#x7F51;">Unix &#x548C;&#x4E92;&#x8054;&#x7F51;</h2>
+<p>&#x540C;&#x65F6;&#xFF0C;Unix &#x548C;&#x4E92;&#x8054;&#x7F51;&#x7684;&#x8054;&#x7CFB;&#xFF0C;&#x5E76;&#x4E0D;&#x5C40;&#x9650;&#x4E8E; Unix &#x542F;&#x53D1;&#x4E86; Linux &#x3002;</p>
+<p>&#x5F53;&#x5E74;&#xFF0C;Tim Berners-Lee &#x5F00;&#x53D1; Web &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x5C31;&#x662F; Unix &#x7CFB;&#x7EDF;&#x3002;&#x7B2C;&#x4E00;&#x4E2A; Web &#x670D;&#x52A1;&#x5668;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x4E54;&#x5E03;&#x65AF;&#x7684; Nextstep &#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#xFF0C;&#x800C; Nextstep &#x7CFB;&#x7EDF;&#x5C31;&#x662F;&#x73B0;&#x5728;&#x7684; macOS &#x7CFB;&#x7EDF;&#x7684;&#x524D;&#x8EAB;&#xFF0C;&#x5C31;&#x662F; Unix &#x7CFB;&#x7EDF;&#x3002;&#x4E8E;&#x662F;&#xFF0C;Unix &#x7684;&#x5F88;&#x591A;&#x7279;&#x6027;&#x90FD;&#x6DF1;&#x6DF1;&#x7684;&#x523B;&#x5165;&#x4E86;&#x4E92;&#x8054;&#x7F51;&#x7684;&#x57FA;&#x56E0;&#x4E4B;&#x4E2D;&#x3002;</p>
+<p>&#x53E6;&#x5916; Ken &#x8FD8;&#x53C2;&#x4E0E;&#x4E86;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x5BF9;&#x4E92;&#x8054;&#x7F51;&#x6709;&#x91CD;&#x5927;&#x5F71;&#x54CD;&#x7684;&#x9879;&#x76EE;&#x3002;1992&#x5E74;&#xFF0C;Ken &#x53C2;&#x4E0E;&#x5236;&#x5B9A;&#x4E86; UTF-8 &#x7F16;&#x7801;&#x6807;&#x51C6;&#xFF0C;UTF-8 &#x540E;&#x6765;&#x6210;&#x4E86; Web &#x4E0A;&#x7F16;&#x7801;&#x7684;&#x4E8B;&#x5B9E;&#x6807;&#x51C6;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4ECE;2006&#x5E74;&#x5F00;&#x59CB; Ken &#x5728;&#x8C37;&#x6B4C;&#x5DE5;&#x4F5C;&#xFF0C;&#x53D1;&#x660E;&#x4E86; Go &#x8BED;&#x8A00;&#x3002;Go &#x76EE;&#x524D;&#x5728;&#x4E92;&#x8054;&#x7F51;&#x5F00;&#x53D1;&#x9886;&#x57DF;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x6D41;&#x884C;&#x7684;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#xFF0C;&#x6CA1;&#x6709; Unix &#x5C31;&#x6CA1;&#x6709;&#x4E92;&#x8054;&#x7F51;&#x3002;</p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x6700;&#x540E;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x3002; Ken &#x9996;&#x5148;&#x662F;&#x73B0;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x7F16;&#x7A0B;&#x6DF7;&#x6C8C;&#x521D;&#x5F00;&#x65F6;&#x4EE3;&#x7684;&#x5F00;&#x5C71;&#x7956;&#x5E08;&#x3002;&#x786E;&#x5B9A;&#x4E86;&#x4E4B;&#x540E;&#x51E0;&#x5341;&#x5E74;&#x8F6F;&#x4EF6;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x641E;&#xFF0C;&#x884C;&#x4E1A;&#x4E2D;&#x6709;&#x53E5;&#x8BDD;&#xFF0C;</p>
+<blockquote>
+<p>&#x771F;&#x6B63;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x662F;&#x7528; Unix &#x7684;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x662F;&#x7528; C &#x7684;&#x3002;</p>
+</blockquote>
+<p>Ken &#x4E0D;&#x4EC5;&#x4EC5;&#x5F00;&#x53D1;&#x4E86;&#x5404;&#x9879;&#x4E92;&#x8054;&#x7F51;&#x7684;&#x57FA;&#x7840;&#x6280;&#x672F;&#xFF0C;&#x8FD8;&#x4E3A;&#x540E;&#x6765;&#x7684;&#x6574;&#x4E2A;&#x5F00;&#x6E90;&#x8FD0;&#x52A8;&#x6253;&#x597D;&#x4E86;&#x57FA;&#x7840;&#xFF0C;&#x6240;&#x4EE5; Ken &#x662F;&#x5F53;&#x4E4B;&#x65E0;&#x6127;&#x7684;&#x4E92;&#x8054;&#x7F51;&#x5960;&#x57FA;&#x4EBA;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ken_Thompson#Early_life_and_education" target="_blank">https://en.wikipedia.org/wiki/Ken_Thompson#Early_life_and_education</a></li>
+<li><a href="https://www.youtube.com/watch?v=tc4ROCJYbm0" target="_blank">https://www.youtube.com/watch?v=tc4ROCJYbm0</a></li>
+<li><a href="https://www.youtube.com/watch?v=WVTWCPoUt8w&amp;t=56s" target="_blank">https://www.youtube.com/watch?v=WVTWCPoUt8w&amp;t=56s</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vint.html" class="navigation navigation-next " aria-label="Next page: Internet 之父-- Vint Cerf">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Unix 之父-- Ken Thompson","level":"1.2","depth":1,"next":{"title":"Internet 之父-- Vint Cerf","level":"1.3","depth":1,"path":"vint.md","ref":"vint.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ken.md","mtime":"2019-07-28T13:27:00.001Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-28T23:43:48.482Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
